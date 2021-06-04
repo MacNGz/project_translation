@@ -21,3 +21,4 @@ app.config.from_envvar('PROJECT_TRANSLATION_SETTINGS', silent=True)
 # (Reference http://flask.pocoo.org/docs/patterns/packages/)  We're
 # going to tell pylint and pycodestyle to ignore this coding style violation.
 import project_translation.views  # noqa: E402  pylint: disable=wrong-import-position
+import project_translation.api  # noqa: E402  pylint: disable=wrong-import-position
