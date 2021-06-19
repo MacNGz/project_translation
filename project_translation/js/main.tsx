@@ -4,7 +4,7 @@ import Content from './content';
 
 ReactDOM.render(
     <Content 
-        caption="It just takes some time, little girl you're in the middle of the ride"
+        caption=""
         url="/api/v1/" 
     />,
     document.getElementById('reactEntry'),

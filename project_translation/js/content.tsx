@@ -11,11 +11,13 @@ const Content = (props: IContentProps) => {
 
     const { caption, url } = props;
 
+    const [entryValue, setEntryValue] = useState("");
     const [resultValue, setResultValue] = useState("");
     const [translation, setTranslation] = useState("");
 
     const onEntryFormSubmit = useCallback(
         async (value: string) => {
+            setEntryValue(value);
 
             const response = await fetch(
                 `${url}pinyin?han=${value}`, 
@@ -35,10 +37,17 @@ const Content = (props: IContentProps) => {
                 <p>{caption}</p>
             </div>
             <div className="card">
-                <EntryForm label="Enter some text:" onSubmit={onEntryFormSubmit}/>
+                <EntryForm 
+                    label="Enter some text:" 
+                    onSubmit={onEntryFormSubmit}
+                />
             </div>
             <div className="card">
-                <ResultsForm pinyin={resultValue} translation={translation}/>
+                <ResultsForm 
+                    entryValue={entryValue} 
+                    pinyin={resultValue} 
+                    translation={translation}
+                />
             </div>
         </div>
     );

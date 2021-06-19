@@ -1,16 +1,31 @@
 import React from 'react';
+import CharacterContainer from './characterContainer';
 
 interface IResultsFormProps {
+    entryValue: string;
     pinyin: string;
     translation: string;
 }
 
 const ResultsForm = (props: IResultsFormProps) => {
 
-    const { pinyin, translation } = props;
+    const { entryValue, pinyin, translation } = props;
+
+    const characterArr = [...entryValue];
+    const pinyinArr = pinyin.split(" ");
 
     return (
         <div className="label-with-buffer">
+            <span>
+                Chinese:
+            </span>
+            <br />
+            <span>
+                {entryValue}
+            </span>
+            <br />
+            <br />
+
             <span>
                 Pinyin:
             </span>
@@ -20,6 +35,7 @@ const ResultsForm = (props: IResultsFormProps) => {
             </span>
             <br />
             <br />
+
             <span>
                 Translation:
             </span>
@@ -27,6 +43,10 @@ const ResultsForm = (props: IResultsFormProps) => {
             <span>
                 {translation}
             </span>
+            <br />
+            <br />
+
+            <CharacterContainer characters={characterArr} pinyin={pinyinArr} />
         </div>
     );
 };

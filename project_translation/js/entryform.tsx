@@ -34,4 +34,4 @@ const EntryForm = (props: IEntryFormProps) => {
     );
 }
 
-export default EntryForm
+export default EntryForm;

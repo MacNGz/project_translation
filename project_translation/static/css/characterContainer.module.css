@@ -1,0 +1,7 @@
+.characterContainer {
+    display: inline-block;
+}
+
+.showPinyinCheckbox {
+    margin-right: 5px;
+}

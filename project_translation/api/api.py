@@ -15,8 +15,6 @@ def get_pinyin():
     result = han_to_pinyin(han)
     english = han_to_english(han)
 
-    print(english)
-
     return flask.jsonify(
         pinyin=result,
         translation=english
